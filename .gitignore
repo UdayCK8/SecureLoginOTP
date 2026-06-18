@@ -1,0 +1,23 @@
+# Build output
+target/
+*.class
+*.jar
+!lib/*.jar
+
+# Config containing real secrets — never commit this
+src/main/resources/config.properties
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

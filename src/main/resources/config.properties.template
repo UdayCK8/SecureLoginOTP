@@ -1,0 +1,12 @@
+db.host=localhost
+db.port=3306
+db.name=secure_login_otp
+db.user=root
+db.password=
+
+mail.username=acverify.888@gmail.com
+mail.app.password=opaj zvhf kwde aluc
+
+mail.smtp.host=smtp.gmail.com
+mail.smtp.port=587
+mail.smtp.starttls.enable=true

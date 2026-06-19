@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class ValidationUtil {
 
     private static final Pattern EMAIL_PATTERN =
-            Pattern.compile("^[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}$");
+            Pattern.compile("^[\\w.+-]+@[\\w-]+(\\.[a-zA-Z]{2,})+$");
 
     private static final Pattern USERNAME_PATTERN =
             Pattern.compile("^[a-zA-Z0-9_]{4,20}$");

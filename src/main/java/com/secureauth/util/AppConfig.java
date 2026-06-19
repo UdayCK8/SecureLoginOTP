@@ -52,8 +52,21 @@ public class AppConfig {
                 props.load(in);
             }
         } catch (IOException e) {
-            System.err.println("Warning: could not load config.properties — " +
-                    "falling back to environment variables. " + e.getMessage());
+            System.err.println("Warning: could not load config.properties from classpath — " +
+                    "falling back to environment variables or external file. " + e.getMessage());
+        }
+
+        // Also load external config.properties from the current working directory (next to the JAR)
+        try {
+            java.nio.file.Path external = java.nio.file.Paths.get("config.properties");
+            if (java.nio.file.Files.exists(external)) {
+                try (InputStream extIn = java.nio.file.Files.newInputStream(external)) {
+                    props.load(extIn);
+                    System.out.println("[AppConfig] Loaded external config.properties: " + external.toAbsolutePath());
+                }
+            }
+        } catch (IOException e) {
+            // ignore — classpath config is sufficient
         }
 
         DB_HOST = envOrProp("DB_HOST", props, "db.host", "localhost");

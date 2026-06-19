@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — SecureLoginOTP</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="login">
+    <nav class="navbar">
+        <div class="navbar-brand">🔐 SecureLoginOTP</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-title">Log In</div>
+            <div class="card-subtitle">Enter your credentials and verify with email OTP.</div>
+            <div id="loginAlert" class="alert"></div>
+
+            <!-- Step 1 -->
+            <div id="step-password" class="login-step">
+                <div class="steps">
+                    <div class="step active">1</div>
+                    <div class="step-line"></div>
+                    <div class="step">2</div>
+                    <div class="step-line"></div>
+                    <div class="step">3</div>
+                </div>
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="loginUsername" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Continue to OTP</button>
+                </form>
+                <div class="link-group">No account? <a href="register.html">Register</a></div>
+            </div>
+
+            <!-- Step 2: wait -->
+            <div id="step-wait" class="login-step hide">
+                <div class="steps">
+                    <div class="step done">1</div>
+                    <div class="step-line" style="background:var(--success);"></div>
+                    <div class="step active">2</div>
+                    <div class="step-line"></div>
+                    <div class="step">3</div>
+                </div>
+                <div class="alert alert-info show" style="text-align:center;">
+                    <span class="spinner" style="border-color:rgba(0,0,0,0.1);border-top-color:var(--primary);margin-bottom:0.5rem;"></span><br>
+                    Verifying password and sending OTP…
+                </div>
+            </div>
+
+            <!-- Step 3: verify -->
+            <div id="step-otp" class="login-step hide">
+                <div class="steps">
+                    <div class="step done">1</div>
+                    <div class="step-line" style="background:var(--success);"></div>
+                    <div class="step done">2</div>
+                    <div class="step-line" style="background:var(--success);"></div>
+                    <div class="step active">3</div>
+                </div>
+                <form id="otpForm">
+                    <div class="form-group">
+                        <label>Enter 6-digit OTP</label>
+                        <input type="text" id="otpInput" placeholder="000000" maxlength="6" inputmode="numeric" autocomplete="one-time-code" required>
+                    </div>
+                    <div class="otp-box">
+                        <h3>Time Remaining</h3>
+                        <div class="otp-timer" id="otpTimer">05:00</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verify & Log In</button>
+                </form>
+                <div style="display:flex;gap:0.5rem;margin-top:0.75rem;">
+                    <button type="button" id="resendBtn" class="btn btn-secondary">Resend OTP</button>
+                    <a href="login.html" class="btn btn-secondary" style="text-decoration:none;">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

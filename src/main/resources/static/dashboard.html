@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — SecureLoginOTP</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="dashboard">
+    <nav class="navbar">
+        <div class="navbar-brand">🔐 SecureLoginOTP</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#" data-action="logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container container-wide">
+        <div class="card hero-card">
+            <h1>Welcome, <span id="welcomeUser">User</span>! 👋</h1>
+            <p>You have successfully logged in using two-factor OTP authentication.</p>
+            <div class="alert alert-success show" style="text-align:center;">
+                Your account is secured with password + email OTP verification.
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="emoji">🔐</div>
+                    <h4>Password Security</h4>
+                    <p>Your password is hashed with BCrypt.</p>
+                    <a href="change-password.html" class="btn btn-primary" style="width:auto;padding:0.5rem 1rem;margin-top:0.5rem;font-size:0.85rem;">Change Password</a>
+                </div>
+                <div class="feature-card">
+                    <div class="emoji">📧</div>
+                    <h4>OTP Delivery</h4>
+                    <p>One-time passwords sent to your email expire in 5 minutes.</p>
+                </div>
+            </div>
+            <button data-action="logout" class="btn btn-danger" style="width:auto;padding:0.7rem 2rem;margin-top:1.5rem;">Logout</button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

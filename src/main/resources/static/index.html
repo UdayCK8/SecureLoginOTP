@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureLoginOTP</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="index">
+    <nav class="navbar">
+        <div class="navbar-brand">🔐 SecureLoginOTP</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="container container-wide">
+        <div class="card hero-card">
+            <h1>Secure Login System</h1>
+            <p>Two-Factor Authentication using Email OTP. Register, login with your password, and verify with a one-time code sent to your inbox.</p>
+            <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+                <a href="register.html" class="btn btn-primary" style="width:auto;padding:0.7rem 1.5rem;">Get Started</a>
+                <a href="login.html" class="btn btn-secondary" style="width:auto;padding:0.7rem 1.5rem;">Log In</a>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card"><div class="emoji">🔑</div><h4>Password + OTP</h4><p>Dual-layer login protection</p></div>
+                <div class="feature-card"><div class="emoji">🛡️</div><h4>BCrypt Hashes</h4><p>Passwords never stored plain</p></div>
+                <div class="feature-card"><div class="emoji">⏱️</div><h4>5-Min OTP</h4><p>Time-limited single-use codes</p></div>
+                <div class="feature-card"><div class="emoji">📧</div><h4>SMTP Email</h4><p>OTP delivered to your email</p></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

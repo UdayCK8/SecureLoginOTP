@@ -1,3 +1,4 @@
+
 package com.secureauth;
 
 import org.springframework.boot.SpringApplication;
